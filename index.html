@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/node_modules/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script>
+        document.querySelector("html").style.fontSize=window.screen.width/20+'px';
+        window.onresize=function(){
+            document.querySelector("html").style.fontSize=window.screen.width/20+'px';
+        }
+    </script>
+</head>
+<body>
+<div class="swiper-container teaber-container">
+    <div class="swiper-wrapper">
+        <!--首页-->
+        <div class="swiper-slide teaber-slide">首页</div>
+        <!--分享-->
+        <div class="swiper-slide teaber-slide">分享</div>
+        <!--照相机-->
+        <div class="swiper-slide teaber-slide">购物车</div>
+        <!--喜欢收藏的-->
+        <div class="swiper-slide teaber-slide active">
+            <!-- 分页器 -->
+            <div class="swiper-pagination message-pagination"></div>
+            <div class="swiper-container message-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide message-slide">11</div>
+                    <div class="swiper-slide message-slide">22</div>
+                    <div class="swiper-slide message-slide">33</div>
+                </div>
+            </div>
+        </div>
+        <!--个人中心-->
+        <div class="swiper-slide teaber-slide">个人中心</div>
+    </div>
+    <!-- 分页器 -->
+    <div class="swiper-pagination teaber-pagination"></div>
+</div>
+</body>
+</html>
+<script src="lib/node_modules/swiper/dist/js/swiper.min.js"></script>
+<script>
+    //调用swiper的初始化
+    var taberSwiper=new Swiper('.teaber-container',{
+        //需要分页器
+        pagination:'.teaber-pagination',
+        //让分页器可以点击
+        paginationClickable :true,
+    });
+    var taberSwiper=new Swiper('.message-container',{
+        //需要分页器
+        pagination:'.message-slide',
+        //让分页器可以点击
+        paginationClickable :true,
+    });
+
+</script>

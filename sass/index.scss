@@ -1,0 +1,123 @@
+@import 'normalize.scss';
+@import 'base.scss';
+
+@function p2r($size){
+  @return ($size/32*1rem)
+}
+html,body{
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+//总体布局部分
+.teaber-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  >.teaber-slide{
+    flex: 1;
+  }
+  >.teaber-pagination{
+    height: p2r(90);
+    position: relative;
+    bottom: 0;
+    background: white;
+    span{
+      position: absolute;
+      width:20%;
+      height: 100%;
+      background: greenyellow;
+      border-radius: 0;
+      margin: 0 !important;
+      &::before{
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: p2r(12);
+      }
+      &:nth-child(1){
+        left:0;
+        background:url('../img/01.app-icons/bb_btn_home_unselect.png') no-repeat center p2r(10);
+        background-size: p2r(40) p2r(37);
+        &::before{
+          content:'首页';
+        }
+      }
+      &:nth-child(2){
+        left:20%;
+        background:url('../img/01.app-icons/bb_btn_label_unselect.png') no-repeat center p2r(10);
+        background-size: p2r(50) p2r(40);
+        &::before{
+          content:'分享';
+        }
+      }
+      &:nth-child(3){
+        left:40%;
+        background:url('../img/01.app-icons/bb_btn_post_select.png') no-repeat center ;
+        background-size: p2r(100) p2r(70);
+        border-radius: p2r(30);
+      }
+      &:nth-child(4){
+        left:60%;
+        background:url('../img/01.app-icons/bb_btn_message_unselect.png') no-repeat center p2r(10);
+        background-size:p2r(43) p2r(43);
+        &::before{
+          content:'喜欢';
+        }
+      }
+      &:nth-child(5){
+        left:80%;
+        background:url('../img/01.app-icons/bb_btn_account_unselect.png') no-repeat center p2r(10);
+        background-size: p2r(40) p2r(36);
+        &::before{
+          content:'个人中心';
+        }
+      }
+    }
+  }
+  .teaber-slide:nth-child(1){
+    background: red;
+  }
+  .teaber-slide:nth-child(2){
+    background: green;
+  }
+  .teaber-slide:nth-child(3){
+    background: pink;
+  }
+  .teaber-slide:nth-child(4){
+    background: blue;
+  }
+  .teaber-slide:nth-child(5){
+    background: skyblue;
+  }
+}
+
+
+//消息样式
+.message-container{
+  height: 100%;
+  >.message-slide{
+   height: 100%;
+    &:nth-child(1){
+      background: pink;
+    }
+    &:nth-child(2){
+      background: purple;
+    }
+    &:nth-child(3){
+      background: yellow;
+    }
+    .message-pagination{
+      width: p2r(90);
+      border: 1px solid #000;
+    }
+
+  }
+}
+
+
+
+
