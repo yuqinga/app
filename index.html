@@ -26,13 +26,13 @@
         <div class="swiper-slide teaber-slide">购物车</div>
         <!--喜欢收藏的-->
         <div class="swiper-slide teaber-slide active">
-            <!-- 分页器 -->
-            <div class="swiper-pagination message-pagination"></div>
             <div class="swiper-container message-container">
+                <!-- 分页器 -->
+                <div class="swiper-pagination message-pagination"></div>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide message-slide">11</div>
-                    <div class="swiper-slide message-slide">22</div>
-                    <div class="swiper-slide message-slide">33</div>
+                    <div class="swiper-slide">1</div>
+                    <div class="swiper-slide">2</div>
+                    <div class="swiper-slide">3</div>
                 </div>
             </div>
         </div>
@@ -53,9 +53,9 @@
         //让分页器可以点击
         paginationClickable :true,
     });
-    var taberSwiper=new Swiper('.message-container',{
+    var messageSwiper=new Swiper('.message-container',{
         //需要分页器
-        pagination:'.message-slide',
+        pagination:'.message-pagination',
         //让分页器可以点击
         paginationClickable :true,
     });

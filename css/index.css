@@ -503,15 +503,36 @@ html, body {
     background: skyblue; }
 
 .message-container {
-  height: 100%; }
-  .message-container > .message-slide {
-    height: 100%; }
-    .message-container > .message-slide:nth-child(1) {
-      background: pink; }
-    .message-container > .message-slide:nth-child(2) {
-      background: purple; }
-    .message-container > .message-slide:nth-child(3) {
-      background: yellow; }
-    .message-container > .message-slide .message-pagination {
-      width: 2.8125rem;
-      border: 1px solid #000; }
+  height: 100%;
+  background: white; }
+  .message-container > .message-pagination {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    background: red; }
+    .message-container > .message-pagination > span {
+      position: absolute;
+      bottom: 0;
+      height: 0.3125rem;
+      width: 33.333%;
+      background: sienna;
+      border-radius: 0;
+      border: 3px solid yellowgreen;
+      margin: 0; }
+      .message-container > .message-pagination > span::before {
+        position: absolute;
+        top: -1.875rem;
+        text-align: center; }
+      .message-container > .message-pagination > span:nth-child(1) {
+        left: 0; }
+        .message-container > .message-pagination > span:nth-child(1)::before {
+          content: "动态"; }
+      .message-container > .message-pagination > span:nth-child(2) {
+        left: 6.6875rem; }
+        .message-container > .message-pagination > span:nth-child(2)::before {
+          content: "消息"; }
+      .message-container > .message-pagination > span:nth-child(3) {
+        left: 13.6875rem; }
+        .message-container > .message-pagination > span:nth-child(3)::before {
+          content: '聊天'; }

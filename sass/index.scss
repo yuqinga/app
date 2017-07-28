@@ -99,24 +99,50 @@ html,body{
 //消息样式
 .message-container{
   height: 100%;
-  >.message-slide{
-   height: 100%;
-    &:nth-child(1){
-      background: pink;
-    }
-    &:nth-child(2){
-      background: purple;
-    }
-    &:nth-child(3){
-      background: yellow;
-    }
-    .message-pagination{
-      width: p2r(90);
-      border: 1px solid #000;
-    }
+  background: white;
+  >.message-pagination{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: p2r(80);
+    background: red;
+    >span{
+      position: absolute;
+      bottom:0;
+      height: p2r(10);
+      width:33.333%;
+      background:sienna;
+      border-radius: 0;
+      border: 3px solid yellowgreen;
+      margin: 0;
+      &::before{
+        position: absolute;
+        top: p2r(-60);
+        text-align: center;
+      }
+      &:nth-child(1){
+        left: 0;
+        &::before{
+          content: "动态";
+        }
+      }
+      &:nth-child(2){
+        left: p2r(214);
+        &::before{
+          content: "消息";
+        }
+      }
+      &:nth-child(3){
+        left: p2r(438);
+        &::before{
+          content:'聊天';
+        }
+      }
 
+    }
   }
 }
+
 
 
 
