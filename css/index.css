@@ -390,7 +390,7 @@ template {
 [hidden] {
   display: none; }
 
-html, body, span, div, h1, a, img {
+html, body, span, div, h1, a, img, ul, ol, li, p {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -446,15 +446,16 @@ html, body {
   .teaber-container > .teaber-pagination {
     height: 2.8125rem;
     position: relative;
-    bottom: 0;
-    background: white; }
+    bottom: 0; }
     .teaber-container > .teaber-pagination span {
       position: absolute;
       width: 20%;
       height: 100%;
       background: greenyellow;
       border-radius: 0;
-      margin: 0 !important; }
+      margin: 0 !important;
+      background: white;
+      opacity: 1; }
       .teaber-container > .teaber-pagination span::before {
         position: absolute;
         bottom: 0;
@@ -464,13 +465,13 @@ html, body {
         font-size: 0.375rem; }
       .teaber-container > .teaber-pagination span:nth-child(1) {
         left: 0;
-        background: url("../img/01.app-icons/bb_btn_home_unselect.png") no-repeat center 0.3125rem;
+        background: url("../img/01.app-icons/bb_btn_home_select.png") no-repeat center 0.3125rem;
         background-size: 1.25rem 1.15625rem; }
         .teaber-container > .teaber-pagination span:nth-child(1)::before {
           content: '首页'; }
       .teaber-container > .teaber-pagination span:nth-child(2) {
         left: 20%;
-        background: url("../img/01.app-icons/bb_btn_label_unselect.png") no-repeat center 0.3125rem;
+        background: url("../img/01.app-icons/bb_btn_label_select.png") no-repeat center 0.3125rem;
         background-size: 1.5625rem 1.25rem; }
         .teaber-container > .teaber-pagination span:nth-child(2)::before {
           content: '分享'; }
@@ -481,13 +482,13 @@ html, body {
         border-radius: 0.9375rem; }
       .teaber-container > .teaber-pagination span:nth-child(4) {
         left: 60%;
-        background: url("../img/01.app-icons/bb_btn_message_unselect.png") no-repeat center 0.3125rem;
+        background: url("../img/01.app-icons/bb_btn_message_select.png") no-repeat center 0.3125rem;
         background-size: 1.34375rem 1.34375rem; }
         .teaber-container > .teaber-pagination span:nth-child(4)::before {
           content: '喜欢'; }
       .teaber-container > .teaber-pagination span:nth-child(5) {
         left: 80%;
-        background: url("../img/01.app-icons/bb_btn_account_unselect.png") no-repeat center 0.3125rem;
+        background: url("../img/01.app-icons/bb_btn_account_select.png") no-repeat center 0.3125rem;
         background-size: 1.25rem 1.125rem; }
         .teaber-container > .teaber-pagination span:nth-child(5)::before {
           content: '个人中心'; }
@@ -498,55 +499,86 @@ html, body {
   .teaber-container .teaber-slide:nth-child(3) {
     background: pink; }
   .teaber-container .teaber-slide:nth-child(4) {
-    background: blue; }
+    background: white; }
   .teaber-container .teaber-slide:nth-child(5) {
     background: skyblue; }
 
 .message-container {
   height: 100%;
-  background: white; }
-  .message-container > .message-pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .message-container .message-pagination {
+    width: 100%;
+    height: 2.8125rem;
+    background: white;
     position: relative;
-    top: 0;
-    left: 0;
-    height: 2.5rem;
-    background: pink; }
-    .message-container > .message-pagination > span {
-      position: absolute;
-      bottom: 0;
-      height: 0.3125rem;
-      width: 33.333%;
-      background: sienna;
+    top: 0; }
+    .message-container .message-pagination > span {
+      width: 33.33333%;
+      height: 100%;
+      background: white;
       border-radius: 0;
-      margin: 0;
-      text-align: center; }
-      .message-container > .message-pagination > span span.swiper-pagination-bullet-active {
-        border: 0.15625rem solid yellowgreen; }
-      .message-container > .message-pagination > span::after {
-        position: absolute;
-        top: -1.875rem;
-        width: 33.333%; }
-      .message-container > .message-pagination > span:nth-child(1) {
-        left: 0; }
-        .message-container > .message-pagination > span:nth-child(1)::after {
-          content: "动态";
-          position: absolute;
-          top: -1.875rem;
-          width: 33.333%; }
-        .message-container > .message-pagination > span:nth-child(1) .message-message {
-          width: 100%;
-          height: 100%; }
-          .message-container > .message-pagination > span:nth-child(1) .message-message li {
+      margin: 0 !important;
+      opacity: 1; }
+      .message-container .message-pagination > span:nth-child(1)::before {
+        content: '动态';
+        line-height: 2.8125rem; }
+      .message-container .message-pagination > span:nth-child(2)::before {
+        content: '消息';
+        line-height: 2.8125rem; }
+      .message-container .message-pagination > span:nth-child(3)::before {
+        content: '聊天';
+        line-height: 2.8125rem; }
+    .message-container .message-pagination span.swiper-pagination-bullet-active {
+      border-bottom: 4px solid yellowgreen; }
+  .message-container .swiper-wrapper {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .message-container .message-message .message-usershare {
+    height: 100%; }
+    .message-container .message-message .message-usershare li {
+      width: 100%;
+      height: 7.65625rem; }
+      .message-container .message-message .message-usershare li .message-box {
+        width: 100%;
+        height: 7.65625rem;
+        border: 1px solid #000; }
+        .message-container .message-message .message-usershare li .message-box .message-img {
+          width: 20%;
+          height: 100%;
+          background: red;
+          padding: 0.625rem 0.15625rem; }
+          .message-container .message-message .message-usershare li .message-box .message-img img {
             width: 100%;
-            height: 3.8125rem;
-            border: 1px #000; }
-            .message-container > .message-pagination > span:nth-child(1) .message-message li p {
-              text-align: center; }
-      .message-container > .message-pagination > span:nth-child(2) {
-        left: 6.6875rem; }
-        .message-container > .message-pagination > span:nth-child(2)::after {
-          content: "消息"; }
-      .message-container > .message-pagination > span:nth-child(3) {
-        left: 13.6875rem; }
-        .message-container > .message-pagination > span:nth-child(3)::after {
-          content: '聊天'; }
+            height: 50%;
+            display: block;
+            border-radius: 50%; }
+        .message-container .message-message .message-usershare li .message-box .message-sharecontent {
+          border: 1px solid yellow;
+          width: 80%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-wrap: wrap;
+              -ms-flex-wrap: wrap;
+                  flex-wrap: wrap; }
+          .message-container .message-message .message-usershare li .message-box .message-sharecontent .message-usemessage {
+            height: 30%;
+            width: 100%;
+            background: skyblue; }
+            .message-container .message-message .message-usershare li .message-box .message-sharecontent .message-usemessage a {
+              font-size: 0.625rem;
+              color: black; }
+          .message-container .message-message .message-usershare li .message-box .message-sharecontent img {
+            width: 3.8125rem;
+            height: 3.90625rem; }

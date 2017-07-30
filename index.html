@@ -19,33 +19,44 @@
 <div class="swiper-container teaber-container">
     <div class="swiper-wrapper">
         <!--首页-->
-        <div class="swiper-slide teaber-slide">首页</div>
+        <div class="swiper-slide teaber-slide swiper-no-swiping">首页</div>
         <!--分享-->
-        <div class="swiper-slide teaber-slide">分享</div>
+        <div class="swiper-slide teaber-slide swiper-no-swiping">分享</div>
         <!--照相机-->
-        <div class="swiper-slide teaber-slide">购物车</div>
+        <div class="swiper-slide teaber-slide swiper-no-swiping">购物车</div>
         <!--喜欢收藏的-->
-        <div class="swiper-slide teaber-slide active">
+        <div class="swiper-slide teaber-slide swiper-no-swiping">
             <div class="swiper-container message-container">
                 <!-- 分页器 -->
                 <div class="swiper-pagination message-pagination"></div>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">动态</div>
-                    <div class="swiper-slide">
-                        <ul class="message-message">
-                            <li><a href="#">
-                                <span></span>
-                                <p>新粉丝</p>
-                                <span></span>
-                            </a></li>
+                    <div class="swiper-slide message-message swiper-no-swiping">
+                        <ul class="message-usershare">
+                            <li class="clearfix">
+                                <div href="#" class="message-box">
+                                    <div class="message-img fl">
+                                        <img src="img/02.head-icons/lofter_header_icon_ (1).jpg" alt=""/>
+                                    </div>
+                                    <div class="message-sharecontent fr">
+                                        <div class="message-usemessage">
+                                            <a href="#">我爱我家</a>
+                                            <p>3小时前</p>
+                                        </div>
+                                        <img src="img/02.head-icons/lofter_header_icon_ (93).jpg" alt=""/>
+                                        <img src="img/02.head-icons/lofter_header_icon_ (85).jpg" alt=""/>
+                                        <img src="img/02.head-icons/lofter_header_icon_ (134).jpg" alt=""/>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                    <div class="swiper-slide">聊天</div>
+                    <div class="swiper-slide swiper-no-swiping">消息</div>
+                    <div class="swiper-slide swiper-no-swiping">聊天</div>
                 </div>
             </div>
         </div>
         <!--个人中心-->
-        <div class="swiper-slide teaber-slide">个人中心</div>
+        <div class="swiper-slide teaber-slide swiper-no-swiping">个人中心</div>
     </div>
     <!-- 分页器 -->
     <div class="swiper-pagination teaber-pagination"></div>
@@ -66,6 +77,8 @@
         pagination:'.message-pagination',
         //让分页器可以点击
         paginationClickable :true,
+        //不能左右滑动
+        noSwiping : true,
     });
 
 </script>

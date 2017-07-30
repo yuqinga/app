@@ -22,7 +22,7 @@ html,body{
     height: p2r(90);
     position: relative;
     bottom: 0;
-    background: white;
+
     span{
       position: absolute;
       width:20%;
@@ -30,6 +30,8 @@ html,body{
       background: greenyellow;
       border-radius: 0;
       margin: 0 !important;
+      background: white;
+      opacity: 1;
       &::before{
         position:absolute;
         bottom: 0;
@@ -40,7 +42,7 @@ html,body{
       }
       &:nth-child(1){
         left:0;
-        background:url('../img/01.app-icons/bb_btn_home_unselect.png') no-repeat center p2r(10);
+        background:url('../img/01.app-icons/bb_btn_home_select.png') no-repeat center p2r(10);
         background-size: p2r(40) p2r(37);
         &::before{
           content:'首页';
@@ -48,7 +50,7 @@ html,body{
       }
       &:nth-child(2){
         left:20%;
-        background:url('../img/01.app-icons/bb_btn_label_unselect.png') no-repeat center p2r(10);
+        background:url('../img/01.app-icons/bb_btn_label_select.png') no-repeat center p2r(10);
         background-size: p2r(50) p2r(40);
         &::before{
           content:'分享';
@@ -62,7 +64,7 @@ html,body{
       }
       &:nth-child(4){
         left:60%;
-        background:url('../img/01.app-icons/bb_btn_message_unselect.png') no-repeat center p2r(10);
+        background:url('../img/01.app-icons/bb_btn_message_select.png') no-repeat center p2r(10);
         background-size:p2r(43) p2r(43);
         &::before{
           content:'喜欢';
@@ -70,7 +72,7 @@ html,body{
       }
       &:nth-child(5){
         left:80%;
-        background:url('../img/01.app-icons/bb_btn_account_unselect.png') no-repeat center p2r(10);
+        background:url('../img/01.app-icons/bb_btn_account_select.png') no-repeat center p2r(10);
         background-size: p2r(40) p2r(36);
         &::before{
           content:'个人中心';
@@ -88,7 +90,7 @@ html,body{
     background: pink;
   }
   .teaber-slide:nth-child(4){
-    background: blue;
+    background: white;
   }
   .teaber-slide:nth-child(5){
     background: skyblue;
@@ -99,64 +101,89 @@ html,body{
 //消息样式
 .message-container{
   height: 100%;
-  background: white;
-  >.message-pagination{
+  display: flex;
+  flex-direction: column;
+  .message-pagination{
+    width:100%;
+    height: p2r(90);
+    background: white;
     position: relative;
-    top: 0;
-    left: 0;
-    height: p2r(80);
-    background: pink;
+    top:0;
     >span{
-      position: absolute;
-      bottom:0;
-      height: p2r(10);
-      width:33.333%;
-      background:sienna;
+      width: 33.33333%;
+      height: 100%;
+      background: white;
       border-radius: 0;
-      margin: 0;
-      text-align: center;
-      span.swiper-pagination-bullet-active{
-        border: p2r(5) solid yellowgreen;
+      margin: 0 !important;
+      opacity: 1;
+     &:nth-child(1)::before{
+       content: '动态';
+       line-height: p2r(90);
+     }
+      &:nth-child(2)::before{
+        content: '消息';
+        line-height: p2r(90);
       }
-      &::after{
-        position: absolute;
-        top: p2r(-60);
-        width: 33.333%;
+      &:nth-child(3)::before{
+        content: '聊天';
+        line-height: p2r(90);
       }
-      &:nth-child(1){
-        left: 0;
-        &::after{
-          content: "动态";
-          position: absolute;
-          top: p2r(-60);
-          width: 33.333%;
-        }
-        .message-message{
+    }
+    span.swiper-pagination-bullet-active{
+      border-bottom: 4px solid yellowgreen;
+
+    }
+  }
+  .swiper-wrapper{
+  flex: 1;
+  }
+
+
+  //消息里面的分享部分
+  .message-message{
+    .message-usershare{
+      height: 100%;
+      li{
+        width: 100%;
+        height: p2r(245);
+        .message-box{
           width: 100%;
-          height: 100%;
-          li{
-            width: 100%;
-            height:p2r(122);
-            border: 1px #000;
-            p{
-              text-align: center;
+          height: p2r(245);
+          border: 1px solid #000;
+          .message-img{
+            width: 20%;
+            height: 100%;
+            background: red;
+            padding: p2r(20) p2r(5);
+            img{
+              width: 100%;
+              height: 50%;
+              display: block;
+              border-radius: 50%;
+            }
+          }
+          .message-sharecontent{
+            border: 1px solid yellow;
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            .message-usemessage{
+              height: 30%;
+              width: 100%;
+              background: skyblue;
+              a{
+                font-size: p2r(20);
+                color: black;
+              }
+            }
+            img{
+              width: p2r(122);
+              height: p2r(125);
             }
           }
         }
-      }
-      &:nth-child(2){
-        left: p2r(214);
-        &::after{
-          content: "消息";
-        }
-      }
-      &:nth-child(3){
-        left: p2r(438);
-        &::after{
-          content:'聊天';
-        }
-      }
 
+      }
     }
   }
 }
